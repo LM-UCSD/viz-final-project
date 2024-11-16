@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+#chart {
+    margin: 20px auto;
+    width: 800px;
+    height: 600px;
+    position: relative;
+}
+
+.tooltip {
+    position: absolute;
+    text-align: center;
+    padding: 5px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    pointer-events: none;
+    opacity: 0;
+}
+
+.annotation {
+    margin: 10px auto;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.button-container {
+    margin: 20px auto;
+}
+
+.button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
