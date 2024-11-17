@@ -7,9 +7,35 @@ const svg = d3.select("#chart").append("svg")
     .attr("width", width)
     .attr("height", height);
 
+// Define a clip path
+svg.append("defs").append("clipPath")
+    .attr("id", "clip")
+  .append("rect")
+    .attr("width", width)
+    .attr("height", height);
+
+// Create a group element and apply the clip path
+const g = svg.append("g")
+    .attr("clip-path", "url(#clip)");
+
 // Define a color scale
 const color = d3.scaleQuantize()
     .range(d3.schemeReds[9]);
+
+// Define the zoom behavior
+const zoom = d3.zoom()
+    .scaleExtent([1, 8]) // Set the zoom scale extent
+    .on("zoom", zoomed);
+
+// Apply the zoom behavior to the SVG element
+svg.call(zoom);
+
+// Function to handle zoom events
+function zoomed(event) {
+    const {transform} = event;
+    g.attr("transform", transform);
+    g.attr("stroke-width", 1.5 / transform.k);
+}
 
 // Load and process data
 Promise.all([
@@ -33,7 +59,7 @@ Promise.all([
         const values = data.map(d => +d[datasets[currentIndex].name]);
         color.domain([d3.min(values), d3.max(values)]);
 
-        svg.selectAll(".county")
+        g.selectAll(".county")
             .data(topojson.feature(us, us.objects.counties).features)
             .attr("fill", d => color(riskIndex[d.id] || 0)); // Match FIPS with id
 
@@ -42,7 +68,7 @@ Promise.all([
     }
 
     // Draw the counties
-    svg.append("g")
+    g.append("g")
         .selectAll("path")
         .data(topojson.feature(us, us.objects.counties).features)
         .enter().append("path")
@@ -51,7 +77,7 @@ Promise.all([
         .attr("fill", d => color(riskIndex[d.id] || 0)); // Match FIPS with id
 
     // Draw the state borders
-    svg.append("path")
+    g.append("path")
         .datum(topojson.mesh(us, us.objects.states, (a, b) => a !== b))
         .attr("class", "state-border")
         .attr("d", d3.geoPath())
