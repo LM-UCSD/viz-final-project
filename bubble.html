@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 Impact by Poverty Rate and Population</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .bubble { opacity: 0.7; stroke: black; stroke-width: 1px; }
+        .tooltip { 
+            position: absolute; 
+            background: white; 
+            border: 1px solid #ddd; 
+            padding: 5px; 
+            font-size: 12px;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>COVID-19 Impact by Poverty Rate and Population</h1>
+    <div id="chart"></div>
+    <div class="tooltip" style="display: none;"></div>
+    <script src="bubbleChart.js"></script>
+</body>
+</html>
