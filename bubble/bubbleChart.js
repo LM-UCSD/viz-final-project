@@ -1,5 +1,5 @@
 // Mapbox Access Token
-const mapboxToken = 'pk.eyJ1IjoiYW1lZWsxMjM0NSIsImEiOiJjbTNxb2w2eWEwc2I1MmtxYWphcmt2NHlsIn0.1R3OG4KmqIv3ttPkWE84ew'; // Replace with your token
+const mapboxToken = 'pk.eyJ1IjoiYW1lZWsxMjM0NSIsImEiOiJjbTN0MnFiaTYwM216MnFvc2ExejE1dXV0In0.yIOvb2W-N-pFwrGvhlSdCA'; // Replace with your token
 mapboxgl.accessToken = mapboxToken;
 
 
