@@ -49,7 +49,7 @@ svg.append("text")
     .text("Count of Deaths");
 
 // Load and process data
-d3.csv("covid_data_log_200908.csv").then(data => {
+d3.csv("../covid_data_log_200922.csv").then(data => {
     // Function to update chart for a specific race
     function updateChart(race) {
         const raceData = [
