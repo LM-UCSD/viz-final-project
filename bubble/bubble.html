@@ -5,35 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bubble Chart with Mapbox</title>
 
-    <!-- D3 and Mapbox Scripts -->
+    <!-- Include D3 and Mapbox -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet">
 
-    <!-- Global Navbar Script -->
+    <!-- Include the global navigation script -->
     <script type="module" src="../global.js"></script>
 
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-        }
-
-        #map {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 100%;
-        }
-
-        .tooltip {
-            position: absolute;
-            background-color: white;
-            padding: 10px;
-            border: 1px solid black;
-            border-radius: 5px;
-            pointer-events: none;
-            font-size: 12px;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
         }
 
         .navbar {
@@ -61,11 +47,26 @@
         .navbar-link:hover {
             text-decoration: underline;
         }
+
+        #map {
+            flex-grow: 1; /* Allow the map to take up the remaining space */
+            width: 100%;
+        }
+
+        .tooltip {
+            position: absolute;
+            background-color: white;
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 5px;
+            pointer-events: none;
+            font-size: 12px;
+        }
     </style>
 </head>
 <body>
+    <!-- Navigation Bar -->
     <div id="map"></div>
     <script src="bubbleChart.js"></script>
 </body>
 </html>
-
