@@ -1,24 +1,30 @@
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
+    margin: 0;
+    overflow: hidden;
 }
 
-#chart {
-    margin: 20px auto;
-    width: 800px;
-    height: 600px;
-    position: relative;
+#map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full viewport width */
+    height: 90vh; /* Adjust the height */
+}
+
+svg {
+    position: absolute;
+    pointer-events: none; /* Allow map interactions through SVG */
+    width: 200%; /* Match the map's width */
+    height: 200%; /* Match the map's height */
 }
 
 .tooltip {
     position: absolute;
-    text-align: center;
-    padding: 5px;
-    background: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    background: white;
+    padding: 10px;
+    border: 1px solid gray;
+    display: none;
     pointer-events: none;
-    opacity: 0;
 }
 
 .annotation {
