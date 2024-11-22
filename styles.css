@@ -1,6 +1,9 @@
 body {
     margin: 0;
     overflow: hidden;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    zoom: 80%;
 }
 
 #map {
@@ -9,6 +12,13 @@ body {
     left: 0;
     width: 100vw; /* Full viewport width */
     height: 90vh; /* Adjust the height */
+}
+
+#chart {
+    margin: 20px auto;
+    width: 800px;
+    height: 600px;
+    position: relative;
 }
 
 svg {
@@ -50,4 +60,66 @@ svg {
 .button:disabled {
     background-color: #ccc;
     cursor: not-allowed;
+}
+#annotation {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.button-container {
+    margin-top: 10px;
+}
+
+button {
+    margin: 5px;
+    padding: 10px 15px;
+    font-size: 14px;
+    background-color: #007acc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005b99;
+}
+
+.x-label, .y-label {
+    font-size: 14px;
+    fill: #333;
+}
+
+.bar {
+    transition: all 0.3s ease;
+}
+
+/* Navigation bar styles */
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+}
+
+.navbar-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-item {
+    margin: 0;
+}
+
+.navbar-link {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+.navbar-link:hover {
+    background-color: #575757;
 }

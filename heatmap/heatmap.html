@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive US Map: COVID-19 Features</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script type="module" src="../global.js"></script>
+</head>
+<body>
+    <h1>Interactive US Map: COVID-19 Features by County</h1>
+    <div class="annotation" id="annotation">COVID-19 Feature: </div>
+    <div class="button-container">
+        <div>
+            <label for="view1">Select View 1:</label>
+            <select id="view1">
+                <option value="Risk_Index">Risk Index</option>
+                <option value="Poverty">Poverty</option>
+                <option value="TotalPop">Total Population</option>
+                <option value="TotalWhitePop">Total White Population</option>
+                <option value="TotalMinorityPop">Total Minority Population</option>
+            </select>
+
+            <label for="view2">Select View 2:</label>
+            <select id="view2">
+                <option value="Risk_Index">Risk Index</option>
+                <option value="Poverty">Poverty</option>
+                <option value="TotalPop">Total Population</option>
+                <option value="TotalWhitePop">Total White Population</option>
+                <option value="TotalMinorityPop">Total Minority Population</option>
+            </select>
+
+            <button id="toggle-display">Toggle Features</button>
+        </div>
+    </div>
+    <div id="chart"></div>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/topojson.v1.min.js"></script>
+    <script src="heatmap.js"></script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 // Load the CSV data
-d3.csv("covid_data_log_200908.csv").then(data => {
+d3.csv("../covid_data_log_200922.csv").then(data => {
     // Set up SVG dimensions and dot settings
     const width = 800,
         height = 600,
