@@ -22,7 +22,7 @@ const tooltip = d3.select("body").append("div")
     .style("opacity", 0);
 
 const loadAndVisualizeData = async () => {
-    const data = await d3.csv("covid_data_log_200908.csv");
+    const data = await d3.csv("../covid_data_log_200908.csv");
 
     for (let d of data) {
         const coordinates = await getCoordinates(d.County, d.State);
