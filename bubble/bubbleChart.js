@@ -2,7 +2,6 @@
 const mapboxToken = 'pk.eyJ1IjoiYW1lZWsxMjM0NSIsImEiOiJjbTN0MnFiaTYwM216MnFvc2ExejE1dXV0In0.yIOvb2W-N-pFwrGvhlSdCA'; // Replace with your token
 mapboxgl.accessToken = mapboxToken;
 
-
 const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v12',
@@ -23,7 +22,7 @@ const tooltip = d3.select("body").append("div")
     .style("opacity", 0);
 
 const loadAndVisualizeData = async () => {
-    const data = await d3.csv("../covid_data_log_200922.csv");
+    const data = await d3.csv("covid_data_log_200908.csv");
 
     for (let d of data) {
         const coordinates = await getCoordinates(d.County, d.State);
@@ -103,3 +102,4 @@ const getCoordinates = async (county, state) => {
 };
 
 loadAndVisualizeData();
+
