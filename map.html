@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>COVID-19 Visualization</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #chart {
+            margin: 20px auto;
+            width: 800px;
+            text-align: center;
+        }
+        #map {
+            margin: 20px auto;
+            width: 960px;
+            height: 600px;
+        }
+        .tooltip {
+            position: absolute;
+            text-align: center;
+            padding: 8px;
+            background: lightsteelblue;
+            border: 0px;
+            border-radius: 8px;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="chart">
+        <button id="prev" disabled>Previous Race</button>
+        <button id="next">Next Race</button>
+        <button id="toggle-gender">Toggle Gender Split</button>
+        <h2 id="annotation"></h2>
+    </div>
+
+    <div id="map"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
