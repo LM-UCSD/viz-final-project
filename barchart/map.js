@@ -1,7 +1,7 @@
 // Dimensions and SVG setup
 const width = 960, height = 600, margin = { top: 50, right: 60, bottom: 50, left: 60 };
 
-const svg = d3.select("#map")
+const svg = d3.select("#chart")
     .append("svg")
     .attr("width", width)
     .attr("height", height)

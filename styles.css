@@ -10,6 +10,14 @@ body {
     height: 600px;
     position: relative;
 }
+#map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Full viewport width */
+    height: 90vh; /* Adjust the height */
+}
+
 
 .tooltip {
     position: absolute;
