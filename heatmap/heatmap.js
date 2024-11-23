@@ -40,7 +40,7 @@ function zoomed(event) {
 // Load and process data
 Promise.all([
     d3.json("https://d3js.org/us-10m.v1.json"),
-    d3.csv("../covid_data_log_200922.csv") // Replace with your data source
+    d3.csv("../covid_data_log_200922.csv")
 ]).then(([us, data]) => {
     const datasets = [
         { name: "Risk_Index", label: "Risk Index" },
@@ -54,7 +54,7 @@ Promise.all([
     const riskIndex = {};
     data.forEach(d => {
         if (datasets[currentIndex].name === "TotalWhitePop") {
-            riskIndex[d.FIPS] = Math.log(Math.exp(+d.W_Male) + Math.exp(+d.W_Female)); // Calculate Total White Pop
+            riskIndex[d.FIPS] = Math.log(Math.exp(+d.W_Male) + Math.exp(+d.W_Female)); 
         } else if (datasets[currentIndex].name === "TotalMinorityPop") {
             riskIndex[d.FIPS] = Math.log(
                 Math.exp(+d.B_Male) + Math.exp(+d.B_Female) +
@@ -62,7 +62,7 @@ Promise.all([
                 Math.exp(+d.I_Male) + Math.exp(+d.I_Female) +
                 Math.exp(+d.A_Male) + Math.exp(+d.A_Female) +
                 Math.exp(+d.NH_Male) + Math.exp(+d.NH_Female)
-            ); // Calculate Total Minority Pop
+            ); 
         } else {
             riskIndex[d.FIPS] = +d[datasets[currentIndex].name]; // Use FIPS as the key
         }
@@ -138,7 +138,7 @@ Promise.all([
     });
 
     // Add event listeners or UI elements to switch between datasets
-    // Example: Add buttons to switch datasets
+
     d3.select("#dataset-buttons").selectAll("button")
         .data(datasets)
         .enter()
