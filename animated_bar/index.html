@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" class="animated-bar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Bar Chart - Deaths per State</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <link rel="stylesheet" href="../styles.css"> <!-- Link to global CSS (if any) -->
+  <script src="../global.js" defer></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar {
+      background-color: #333;
+      padding: 10px;
+    }
+    .navbar-list {
+      list-style: none;
+      display: flex;
+      justify-content: space-around;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar-item {
+      margin: 0;
+    }
+    .navbar-link {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .navbar-link:hover {
+      text-decoration: underline;
+    }
+    #chart {
+      margin: 20px;
+    }
+    .axis text {
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Deaths Per State - Animated Bar Chart</h1>
+  <div id="chart"></div>
+
+  <script src="chart.js"></script>
+</body>
+</html>
