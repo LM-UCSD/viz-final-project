@@ -10,6 +10,65 @@
 </head>
 
 <body>
+    <div class="container" id="pptContainer" onclick="nextSlide()">
+        <img id="pptSlide" src="static/slide1.png" alt="Slide 1">
+        <span id="slideCounter">1 / 5</span>
+        <div class="controls">
+          <button id="playPauseButton" onclick="toggleAutoplay(event)">Autoplay: Off</button>
+        </div>
+      </div>
+    
+      <script>
+        const slides = [
+          "static/slide1.png",
+          "static/slide2.png",
+          "static/slide3.png",
+          "static/slide4.png",
+          "static/slide5.png",
+        ];
+        let currentSlide = 0;
+        let autoplay = false; // Autoplay status
+        let autoplayInterval = null;
+    
+        const slideImage = document.getElementById("pptSlide");
+        const slideCounter = document.getElementById("slideCounter");
+        const playPauseButton = document.getElementById("playPauseButton");
+    
+        function nextSlide() {
+          // Move to the next slide
+          currentSlide = (currentSlide + 1) % slides.length; // Loop back to the first slide
+          updateSlide();
+        }
+    
+        function updateSlide() {
+          slideImage.src = slides[currentSlide];
+          slideCounter.textContent = `${currentSlide + 1} / ${slides.length}`;
+        }
+    
+        function startAutoplay() {
+          autoplay = true;
+          autoplayInterval = setInterval(nextSlide, 3000); // Change slide every 3 seconds
+          playPauseButton.textContent = "Autoplay: On";
+        }
+    
+        function stopAutoplay() {
+          autoplay = false;
+          clearInterval(autoplayInterval);
+          playPauseButton.textContent = "Autoplay: Off";
+        }
+    
+        function toggleAutoplay(event) {
+          event.stopPropagation(); // Prevent triggering `nextSlide` when button is clicked
+          if (autoplay) {
+            stopAutoplay();
+          } else {
+            startAutoplay();
+          }
+        }
+    
+        // Initialize with the first slide
+        updateSlide();
+      </script>
     <h1> COVID-19: US Socioeconomic Factors</h1>
     <p> This is an exploration of Socioeconomic factors in the US related to COVID-19 outcomes. <a href="https://www.kaggle.com/datasets/laurindogarcia/covid-19-race-gender-poverty-risk-us-county/data?select=covid_data_log_200922.csv" target="_blank">Link to Data</a></p>
     <p>Development is still underway, including piecing together an animated story to tell. For now, we have roughed out some of the visualizations that will get us there.
