@@ -104,16 +104,23 @@ d3.csv("../covid_data_log_200922.csv").then(data => {
             })
             .style("opacity", 0)
             .on("mouseover", (event, d) => {
+                const race = races[currentRaceIndex];
+                const maleCount = Math.floor(d3.sum(data, d => +d[race.maleKey] || 0));
+                const femaleCount = Math.floor(d3.sum(data, d => +d[race.femaleKey] || 0));
+                const totalCount = maleCount + femaleCount;
+            
                 tooltip
                     .style("opacity", 1)
                     .html(
                         showGenderSplit
-                            ? `Gender: ${d.gender}`
-                            : `Total Count`
+                            ? `Gender: ${d.gender}<br>
+                               Total Males: ${maleCount}<br>
+                               Total Females: ${femaleCount}`
+                            : `Total Count: ${totalCount}`
                     )
                     .style("left", event.pageX + 10 + "px")
                     .style("top", event.pageY - 10 + "px");
-            })
+            })            
             .on("mouseout", () => tooltip.style("opacity", 0))
             .transition()
             .duration(1000)
