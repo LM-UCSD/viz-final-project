@@ -78,36 +78,22 @@
       </script>
     <h1> COVID-19: US Socioeconomic Factors</h1>
     <p> This is an exploration of Socioeconomic factors in the US related to COVID-19 outcomes. <a href="https://www.kaggle.com/datasets/laurindogarcia/covid-19-race-gender-poverty-risk-us-county/data?select=covid_data_log_200922.csv" target="_blank">Link to Data</a></p>
-    <p>Development is still underway, including piecing together an animated story to tell. For now, we have roughed out some of the visualizations that will get us there.
-        <br>They should all be viewable via the navigation bar at the top of the page.
-    </p>
-    <h2>What have we done so far?</h2>
-    <p>As we got started, it became clear that there were a few issues with the base dataset: namely, that the total population number didn't math. We started by cleaning up the set, and generating a new total population value (which was cross-validated with the US Census data).
-        <br>From here, we put together a few different displays:
-    </p>
-    
     <h3>Bar Chart</h3>
     <p>This display shows a reactive filter with the count of deaths split by gender. The buttons along the bottom allow the user to view different ethnic groups, and the y-axis will update with the count of deaths.
-        This chart will likely be revised to provide additional insight from our data in the final version. </p>  
+    </p>  
     <h3>Dot Plot</h3>
     <p>This display is similar to the bar chart, except that it shows a case count represented by dots rather than deaths. The data is still split by gender, and the buttons still filter through ethnic groups. The "Show Male vs Female" button must be pressed to show the color maps.
-        This display is one that we will likely revise in our final version, as it is very similar to the bar chart and could provide additional insight via incorporation of other variables.
     </p>  
     <h3>Heat Map</h3>
     <p>This display shows a heatmap of the selected variable by county, where darker red is a higher value. The drop-downs can be selected by the user to compare two features-of-interest; once selected, the "Toggle Features" button can be used to quickly swap between the two variables in order to compare visual differences and look for patterns.</p>  
     <h3>Bubble Map</h3>
     <p>This display pulls in the Mapbox API to display a bubble chart overlay on the US map. The bubbles are scaled to represent risk categories over their counties.
-        <br>Note that this page can take a minute or so to load. 
-        <br>It also may need some revision to its container to display everything properly, and we have had some challenges getting the mapbox tokens to work correctly.
+        <br>Note that this page can take a minute or so to load.
         <br>You may need to zoom out to see if it loaded.
-    </p>  
-    
-    <h2>What challenge(s) are we still facing?</h2>
-    <p>Our biggest challenge is how to weave all of our elements together into a coherent, interesting, and educational story that can unfold via animation.
-        We also need to revise our displays to be more interactive, and to give more insight to what the dataset contains.
-        Right now, many of our displays don't give very deep insight to the original question, and many only reflect normal societal facets (such as gender ratios and population density).
-        Going into the dataset, we had some hypothesis about what correlations we might find, but many of these hypothesis do not seem to be supported by the data from our analysis thus far.
     </p>
+    <h3>Animated Bar</h3>
+    <p>This display shows an animated “bar race” style graph that cycles through death count by state. This way, each state at the top of the chart can be compared to the next 9 below it without having the scale skewed by the larger ones above it. This provides an engaging way to compare state-to-state Covid-19 deaths.
+    </p>  
 </body>
 <br><br>
 
